@@ -8,10 +8,13 @@
 
 import UIKit
 
-class MonitoringViewController: UIViewController {
 
+var timer_flag : Bool = false
+
+class MonitoringViewController: UIViewController {
     
-    
+    // アクティビティ名の表示ラベル
+    @IBOutlet weak var activity_name_label: UILabel!
     // 画像を貼るビューの宣言
     @IBOutlet weak var circle_picUI: UIImageView!
     @IBOutlet weak var activity_picUI: UIImageView!
@@ -27,7 +30,7 @@ class MonitoringViewController: UIViewController {
     let pic_windingreel = UIImage(named:"createdpic/winding_reel.png")!
     
     var pic_array : [UIImage] = []//= [pic_waiting2,pic_moving,pic_moving,pic_casting,pic_waiting2]
-
+    var Activityname_array : [String] = ["WAITING","MOVING","MOVING","CASTING","WAITING"]
     
     
     
@@ -38,6 +41,7 @@ class MonitoringViewController: UIViewController {
         circle_picUI.image=circle_pic
         activity_picUI.image=pic_waiting2
         
+        // アニメーションの定義
         //animation add
         let rotateAnimation = CABasicAnimation(keyPath: "transform.rotation")
         // 起点を0度とする
@@ -59,15 +63,26 @@ class MonitoringViewController: UIViewController {
         pic_array.append(pic_casting)
         pic_array.append(pic_waiting2)
         
-        // タイマー処理の記述
-        Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(MonitoringViewController.timerUpdate), userInfo: nil, repeats: true)
+        
+        
+        //print(timer_flag) //debig
+        if(timer_flag==false){
+            var timer : Timer!
+            timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(MonitoringViewController.timerUpdate), userInfo: nil, repeats: true)
+            timer_flag=true
+        }
     }
     
     var i = 0
     @objc func timerUpdate() {
         // animation ref : https://qiita.com/hachinobu/items/57d4c305c907805b4a53
+        // 画像の推移アニメーション
         UIView.transition(with: activity_picUI, duration: 0.8, options: [.transitionFlipFromLeft], animations: nil, completion: nil)
         activity_picUI.image=pic_array[i]
+        
+        // Activity 名の推移アニメーション
+        UIView.transition(with: activity_name_label, duration: 1.0, options: [.transitionFlipFromTop], animations: nil, completion: nil)
+        activity_name_label.text=Activityname_array[i]
         
         i=i+1
         if(i == pic_array.count){

@@ -28,12 +28,18 @@ class ViewController: UIViewController {
     @IBOutlet weak var button_start: UIButton!
     @IBOutlet weak var button_stop: UIButton!
     
+    //image
+    @IBOutlet weak var fishingiconimg: UIImageView!
+    let fishingicn_pic = UIImage(named:"createdpic/fishing_icon.png")!
+
     var loggingfilename:String  = "log01.csv"
     var inputfilename:String  = "a.csv"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //image
+        fishingiconimg.image=fishingicn_pic
         // ボタンのセットアップ
         // ボタンの装飾
         //let rgba = UIColor(red: 255/255, green: 128/255, blue: 168/255, alpha: 1.0) // ボタン背景色設定
@@ -60,13 +66,15 @@ class ViewController: UIViewController {
         //日付のフォーマットを指定する。
         let format = DateFormatter()
         format.dateFormat = "yyyy/MM/dd HH:mm:ss.SSS"
+        let formattime = DateFormatter()
+        formattime.dateFormat = "HH:mm:ss.SSS"
         //日付をStringに変換する
         let sDate = format.string(from: date)
-        datelabel.text=sDate
+        datelabel.text="Date:" + formattime.string(from: date)
         // 加速度センサー [G]
-        accelerometerX.text = String(format: "%06f", acceleration.x)
-        accelerometerY.text = String(format: "%06f", acceleration.y)
-        accelerometerZ.text = String(format: "%06f", acceleration.z)
+        accelerometerX.text = "X : " + String(format: "%06f", acceleration.x)
+        accelerometerY.text = "Y : " + String(format: "%06f", acceleration.y)
+        accelerometerZ.text = "Z : " + String(format: "%06f", acceleration.z)
         
         // file write
         if let dir = FileManager.default.urls( for: .documentDirectory, in: .userDomainMask ).first {
@@ -122,6 +130,7 @@ class ViewController: UIViewController {
         button_start.isEnabled=false
         button_stop.isEnabled=true
         
+        
         //ファイル名の設定
         let date:Date = Date()
         let format = DateFormatter()        //日付のフォーマットを指定する。
@@ -156,8 +165,11 @@ class ViewController: UIViewController {
             
         }
         
+        
+        
+        
     }
-    
+
     @IBAction func Touch_stop_bt(_ sender: Any) {
         button_start.alpha=1.0
         button_stop.alpha=0.5
@@ -167,7 +179,6 @@ class ViewController: UIViewController {
         //Show message box
         stopAccelerometer()
         showTextInputAlert()
-        
         
     }
     
