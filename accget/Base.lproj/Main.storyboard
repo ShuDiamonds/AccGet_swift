@@ -191,8 +191,8 @@
                                     <constraint firstAttribute="width" constant="250" id="fal-ML-fej"/>
                                 </constraints>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" restorationIdentifier="activity_pic" image="hitting.png" translatesAutoresizingMaskIntoConstraints="NO" id="MOB-pX-p8m">
-                                <rect key="frame" x="22" y="100" width="275" height="279"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="activity_pic" image="hitting.png" translatesAutoresizingMaskIntoConstraints="NO" id="MOB-pX-p8m">
+                                <rect key="frame" x="22.5" y="100" width="275" height="275"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="275" id="O28-rd-cwt"/>
                                     <constraint firstAttribute="width" constant="275" id="jX4-7y-bZ8"/>
@@ -206,6 +206,7 @@
                             <constraint firstItem="CdT-C4-E1y" firstAttribute="trailing" secondItem="ofs-8h-dqO" secondAttribute="trailing" id="3aR-qa-cWk"/>
                             <constraint firstItem="ofs-8h-dqO" firstAttribute="top" secondItem="CdT-C4-E1y" secondAttribute="top" constant="22" id="4oc-9O-urI"/>
                             <constraint firstItem="IhR-cD-dwj" firstAttribute="top" secondItem="8HK-SZ-Hld" secondAttribute="bottom" constant="4" id="7O9-7z-Xom"/>
+                            <constraint firstItem="MOB-pX-p8m" firstAttribute="top" secondItem="zf3-RF-vOf" secondAttribute="bottom" constant="1.5" id="EFW-5B-idq"/>
                             <constraint firstItem="AEA-d7-kUy" firstAttribute="centerX" secondItem="3aO-a7-0Zw" secondAttribute="centerX" id="FMU-vv-ST8"/>
                             <constraint firstItem="zf3-RF-vOf" firstAttribute="top" secondItem="ofs-8h-dqO" secondAttribute="bottom" constant="10" id="K6H-gx-7yw"/>
                             <constraint firstItem="8HK-SZ-Hld" firstAttribute="leading" secondItem="CdT-C4-E1y" secondAttribute="leading" id="OIs-sr-TfN"/>
