@@ -14,6 +14,9 @@
 		F5B2B00222D8533600FA0B9C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5B2B00022D8533600FA0B9C /* LaunchScreen.storyboard */; };
 		F5B2B00D22D8533600FA0B9C /* accgetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B2B00C22D8533600FA0B9C /* accgetTests.swift */; };
 		F5B2B01822D8533600FA0B9C /* accgetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B2B01722D8533600FA0B9C /* accgetUITests.swift */; };
+		F5B8C0E922F5B4FF002BF54E /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B8C0E822F5B4FF002BF54E /* PageViewController.swift */; };
+		F5B8C0EB22F5B761002BF54E /* MonitoringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B8C0EA22F5B761002BF54E /* MonitoringViewController.swift */; };
+		F5B8C0FD22F672BF002BF54E /* createdpic in Resources */ = {isa = PBXBuildFile; fileRef = F5B8C0FC22F672BF002BF54E /* createdpic */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		F5B2B01322D8533600FA0B9C /* accgetUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = accgetUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5B2B01722D8533600FA0B9C /* accgetUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = accgetUITests.swift; sourceTree = "<group>"; };
 		F5B2B01922D8533600FA0B9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F5B8C0E822F5B4FF002BF54E /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		F5B8C0EA22F5B761002BF54E /* MonitoringViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitoringViewController.swift; sourceTree = "<group>"; };
+		F5B8C0FC22F672BF002BF54E /* createdpic */ = {isa = PBXFileReference; lastKnownFileType = folder; name = createdpic; path = pic/createdpic; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +103,15 @@
 		F5B2AFF622D8533400FA0B9C /* accget */ = {
 			isa = PBXGroup;
 			children = (
+				F5B8C0FC22F672BF002BF54E /* createdpic */,
 				F5B2AFF722D8533400FA0B9C /* AppDelegate.swift */,
 				F5B2AFF922D8533400FA0B9C /* ViewController.swift */,
 				F5B2AFFB22D8533400FA0B9C /* Main.storyboard */,
 				F5B2AFFE22D8533600FA0B9C /* Assets.xcassets */,
 				F5B2B00022D8533600FA0B9C /* LaunchScreen.storyboard */,
 				F5B2B00322D8533600FA0B9C /* Info.plist */,
+				F5B8C0E822F5B4FF002BF54E /* PageViewController.swift */,
+				F5B8C0EA22F5B761002BF54E /* MonitoringViewController.swift */,
 			);
 			path = accget;
 			sourceTree = "<group>";
@@ -231,6 +240,7 @@
 			files = (
 				F5B2B00222D8533600FA0B9C /* LaunchScreen.storyboard in Resources */,
 				F5B2AFFF22D8533600FA0B9C /* Assets.xcassets in Resources */,
+				F5B8C0FD22F672BF002BF54E /* createdpic in Resources */,
 				F5B2AFFD22D8533400FA0B9C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,6 +268,8 @@
 			files = (
 				F5B2AFFA22D8533400FA0B9C /* ViewController.swift in Sources */,
 				F5B2AFF822D8533400FA0B9C /* AppDelegate.swift in Sources */,
+				F5B8C0EB22F5B761002BF54E /* MonitoringViewController.swift in Sources */,
+				F5B8C0E922F5B4FF002BF54E /* PageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
