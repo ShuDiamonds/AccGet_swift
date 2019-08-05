@@ -32,6 +32,7 @@ class MonitoringViewController: UIViewController {
     var pic_array : [UIImage] = []//= [pic_waiting2,pic_moving,pic_moving,pic_casting,pic_waiting2]
     var Activityname_array : [String] = ["WAITING","MOVING","MOVING","CASTING","WAITING"]
     
+    var timer : Timer!
     
     
     override func viewDidLoad() {
@@ -64,14 +65,19 @@ class MonitoringViewController: UIViewController {
         pic_array.append(pic_waiting2)
         
         
+        timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(MonitoringViewController.timerUpdate), userInfo: nil, repeats: true)
         
         //print(timer_flag) //debig
+        /*
         if(timer_flag==false){
-            var timer : Timer!
+            
             timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(MonitoringViewController.timerUpdate), userInfo: nil, repeats: true)
             timer_flag=true
         }
+ */
     }
+    
+    
     
     var i = 0
     @objc func timerUpdate() {
@@ -92,6 +98,9 @@ class MonitoringViewController: UIViewController {
         print("update"+String(i))
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        timer.invalidate()
+    }
 
     /*
     // MARK: - Navigation
